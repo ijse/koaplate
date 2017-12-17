@@ -4,7 +4,7 @@
   "description": "",
   "module": "bootstrap.js",
   "scripts": {
-    "start": "webpack && ts-node ./bootstrap.ts",
+    "start": "NODE_ENV=production webpack && ts-node ./bootstrap.ts",
     "dev": "helper/dev.sh",
     "build": "webpack",
     "postinstall": "ln -sf ../ node_modules/app"
@@ -23,6 +23,7 @@
     "@koa/cors": "^2.2.1",
     "@types/koa": "^2.0.43",
     "@types/node": "^8.5.1",
+    "@types/vue": "^2.0.0",
     "autoprefixer": "^7.2.3",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -42,6 +43,7 @@
     "postcss-loader": "^2.0.9",
     "postcss-nesting": "^4.2.1",
     "style-loader": "^0.19.1",
+    "ts-loader": "^3.2.0",
     "ts-node": "^4.0.2",
     "typescript": "^2.6.2",
     "vue": "^2.5.11",

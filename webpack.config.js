@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const ExtractText = require('extract-text-webpack-plugin')
 const UglifyJS = require('webpack-parallel-uglify-plugin')
 
@@ -6,7 +7,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   entry: {
-    app: './client/src/index.js'
+    app: './client/src/index.ts'
   },
   output: {
     path: path.join(__dirname, './client/build/'),
@@ -14,26 +15,34 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.less', '.json'],
+    extensions: ['.js', '.ts', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.common.js'
+      'vue$': 'vue/dist/vue.esm.js'
     }
   },
   module: {
     rules: [{
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+    }, {
+      test: /\.ts$/,
+      exclude: /node_modules|vue\/src/,
+      loader: 'ts-loader',
+      options: {
+        appendTsSuffixTo: [/\.vue$/]
+      }
+    }, {
       test: /\.vue$/,
       loader: 'vue-loader',
       options: {
         extractCSS: true,
+        esModule: true,
         preserveWhitespace: false,
         postcss: {
           plugins: [ require('postcss-nesting')() ]
         }
       }
-    }, {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
     }, {
       test: /\.css$/,
       use: [
@@ -47,6 +56,10 @@ module.exports = {
   },
   devtool: 'sourcemap',
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': isProd ? '"production"' : '"development"'
+    }),
+
     new ExtractText('style.css'),
     new UglifyJS({
       exclude: isProd ? null : /.*/,

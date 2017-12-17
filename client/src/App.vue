@@ -4,11 +4,12 @@
     <p> ok~ </p>
   </div>
 </template>
-<script>
+<script lang="ts">
+  let greeting:string = 'Hello world!'
   export default {
     name: 'App',
     data: () => ({
-      name: 'Hello app.'
+      name: greeting
     })
   }
 </script>
