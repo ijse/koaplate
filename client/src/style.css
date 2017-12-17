@@ -1,0 +1,16 @@
+:root {
+  --primary: #864B38;
+  --second: #71323E;
+  --bg: #EFE4D9;
+  --bg2: #DEC3AF;
+  --light: #9F756A;
+}
+
+html, body {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+
+  color: var(--primary);
+  background: var(--bg);
+}

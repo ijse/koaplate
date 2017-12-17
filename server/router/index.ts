@@ -1,9 +1,10 @@
 const Router = require('koa-router')
 const router = new Router()
+const config = require('config')
 
 router.get('/', async (ctx:any) => {
   await ctx.render('guide', {
-    greeting: 'hello'
+    env: config.get('env')
   })
 })
 

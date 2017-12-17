@@ -28,6 +28,8 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "config": "^1.28.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
     "koa-ejs": "^4.1.0",
@@ -37,11 +39,15 @@
     "koa-router": "^7.3.0",
     "koa-session": "^5.5.1",
     "koa-static": "^4.0.2",
+    "postcss-loader": "^2.0.9",
+    "postcss-nesting": "^4.2.1",
+    "style-loader": "^0.19.1",
     "ts-node": "^4.0.2",
     "typescript": "^2.6.2",
     "vue": "^2.5.11",
     "vue-loader": "^13.6.0",
     "vue-template-compiler": "^2.5.11",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-parallel-uglify-plugin": "^1.0.2"
   }
 }

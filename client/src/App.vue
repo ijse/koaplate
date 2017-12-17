@@ -12,3 +12,14 @@
     })
   }
 </script>
+<style scoped>
+  @import './style.css';
+  .app {
+    position: relative;
+    overflow: hidden;
+
+    & p {
+      color: inherit;
+    }
+  }
+</style>
