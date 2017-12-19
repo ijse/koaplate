@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "module": "bootstrap.js",
+  "engine": {
+    "node": "9.2.0",
+    "npm": "5.5.1"
+  },
   "scripts": {
     "start": "NODE_ENV=production webpack && ts-node ./bootstrap.ts",
     "dev": "helper/dev.sh",
