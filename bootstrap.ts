@@ -5,6 +5,7 @@ const port = config.get('port')
 
 server.listen(port, () => {
   console.log('Server listen at port %s', port)
+  console.log('Local URL: http://localhost:%s', port)
 })
 
 export {}
