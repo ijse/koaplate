@@ -40,6 +40,7 @@
     "koa-router": "^7.3.0",
     "koa-session": "^5.5.1",
     "koa-static": "^4.0.2",
+    "nodemon": "^1.13.3",
     "postcss-loader": "^2.0.9",
     "postcss-nesting": "^4.2.1",
     "style-loader": "^0.19.1",
