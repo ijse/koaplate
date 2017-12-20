@@ -1,6 +1,7 @@
 koaplate
 ========
 
+## Structure
 - Typescript
 - Koa2
   - Router
@@ -20,3 +21,15 @@ koaplate
 - Deploy by Shipit
 - Unit Test
 
+## Getting Startup
+
+```
+yarn
+yarn start
+```
+
+## Contribution
+
+```
+yarn dev
+```
