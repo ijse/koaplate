@@ -46,3 +46,10 @@ docker run -p 4000:4000 koaplate
 ```
 docker run -p 4000:4000 ijse/koaplate
 ```
+
+### Compose
+
+```
+docker swarm init --advertise-addr $(docker-machine ip default) --listen-addr 0.0.0.0
+docker stack deploy -c docker-compose.yml koaplate
+```
