@@ -33,3 +33,16 @@ yarn start
 ```
 yarn dev
 ```
+
+## With docker
+
+### build
+```
+docker build -t koaplate .
+docker run -p 4000:4000 koaplate
+```
+
+### Pull from docker hub
+```
+docker run -p 4000:4000 ijse/koaplate
+```
