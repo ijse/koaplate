@@ -1,8 +1,8 @@
-const Router = require('koa-router')
-const router = new Router()
-const config = require('config')
+import config from 'config'
+import Router from 'koa-router'
+import os from 'os'
 
-const os = require('os')
+const router = new Router()
 
 router.get('/guide(/.*)*', async (ctx:any) => {
   await ctx.render('guide', {
@@ -11,4 +11,4 @@ router.get('/guide(/.*)*', async (ctx:any) => {
   })
 })
 
-module.exports = router
+export default router

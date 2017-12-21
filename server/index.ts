@@ -1,15 +1,15 @@
-const Koa = require('koa')
-const path = require('path')
+import Koa from 'koa'
+import path from 'path'
+import cors from '@koa/cors'
+import morgan from 'koa-morgan'
+import bodyParser from 'koa-bodyparser'
+import session from 'koa-session'
+import helmet from 'koa-helmet'
+import render from 'koa-ejs'
+import statics from 'koa-static'
+import appRouter from 'app/server/router'
 
-const cors = require('@koa/cors')
-const morgan = require('koa-morgan')
-const bodyParser = require('koa-bodyparser')
-const session = require('koa-session')
-const helmet = require('koa-helmet')
-const render = require('koa-ejs')
-const statics = require('koa-static')
-
-const appRouter = require('app/server/router')
+import db from './db'
 
 const app = new Koa()
 
@@ -36,4 +36,4 @@ app.use(appRouter.allowedMethods())
 
 app.use(statics('./client'))
 
-module.exports = app
+export default app
