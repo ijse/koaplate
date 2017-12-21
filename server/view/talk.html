@@ -1,0 +1,12 @@
+<form action="/talk" method="post">
+  <input name="content" />
+  <input type="submit" value="send" />
+</form>
+<ul>
+  <% list.forEach(talk => { %>
+  <li>
+    [<%=moment(talk.createdAt).fromNow() %>]
+    <%=talk.content %>
+  </li>
+  <% }) %>
+</ul>

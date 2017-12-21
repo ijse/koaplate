@@ -1,15 +1,16 @@
-import Koa from 'koa'
-import path from 'path'
-import cors from '@koa/cors'
-import morgan from 'koa-morgan'
-import bodyParser from 'koa-bodyparser'
-import session from 'koa-session'
-import helmet from 'koa-helmet'
-import render from 'koa-ejs'
-import statics from 'koa-static'
-import appRouter from 'app/server/router'
+import * as Koa from 'koa'
+import * as path from 'path'
 
-import db from './db'
+import * as cors from '@koa/cors'
+import * as morgan from 'koa-morgan'
+import * as bodyParser from 'koa-bodyparser'
+import * as session from 'koa-session'
+import * as helmet from 'koa-helmet'
+import * as render from 'koa-ejs'
+import * as statics from 'koa-static'
+import router from 'app/server/router'
+
+import './db'
 
 const app = new Koa()
 
@@ -31,8 +32,8 @@ render(app, {
   debug: false
 })
 
-app.use(appRouter.routes())
-app.use(appRouter.allowedMethods())
+app.use(router.routes())
+app.use(router.allowedMethods())
 
 app.use(statics('./client'))
 

@@ -1,12 +1,14 @@
-import Sequelize from 'sequelize'
-import db from 'app/server/db'
+import {
+  Table,
+  Column,
+  DataType,
+  Model
+} from 'sequelize-typescript'
 
-db.define('Talk', {
-  msg: {
-    type: Sequelize.STRING
-  },
-  date: {
-    type: Sequelize.DATE
-  }
+@Table({
+  timestamps: true
 })
-
+export default class Talk extends Model<Talk> {
+  @Column(DataType.TEXT)
+  content: string
+}

@@ -1,7 +1,6 @@
-const config = require('config')
-
-const Raven = require('raven')
-const server = require('app/server/index.ts')
+import * as config from 'config'
+import * as Raven from 'raven'
+import server from 'app/server'
 
 const port = config.get('port')
 
@@ -12,5 +11,3 @@ server.listen(port, () => {
   console.log('Server listen at port %s', port)
   console.log('Local URL: http://localhost:%s', port)
 })
-
-export {}
