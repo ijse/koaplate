@@ -3,8 +3,7 @@ import * as Router from 'koa-router'
 import * as os from 'os'
 import * as moment from 'moment'
 
-import talk from './talk'
-import guide from './guide'
+import * as requireDir from 'require.dir'
 
 const router = new Router()
 
@@ -17,7 +16,15 @@ router.use(async (ctx, next) => {
   await next()
 })
 
-router.use(talk.routes())
-router.use(guide.routes())
+
+// load routes in current folder
+const routeList:any = requireDir('.')
+;(<any>Object).entries(routeList)
+  .forEach((mod:any) => {
+    const [ name, route ] = mod
+    if (route.default instanceof Router) {
+      router.use(route.default.routes())
+    }
+  })
 
 export default router

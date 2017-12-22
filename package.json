@@ -59,6 +59,7 @@
     "postcss-nesting": "^4.2.1",
     "raven": "^2.3.0",
     "reflect-metadata": "^0.1.10",
+    "require.dir": "^0.3.0",
     "sequelize": "^4.28.6",
     "sequelize-typescript": "^0.6.2",
     "sqlite3": "^3.1.13",
