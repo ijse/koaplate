@@ -21,6 +21,7 @@ if (app.env === 'development') {
 app.use(cors())
 app.use(helmet())
 
+app.keys = [ 'mysecret' ]
 app.use(session({}, app))
 app.use(bodyParser())
 

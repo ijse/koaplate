@@ -3,6 +3,7 @@ import * as Router from 'koa-router'
 import * as os from 'os'
 import * as moment from 'moment'
 
+import passport from './passport'
 import talk from './talk'
 import guide from './guide'
 
@@ -17,6 +18,7 @@ router.use(async (ctx, next) => {
   await next()
 })
 
+router.use(passport.routes())
 router.use(talk.routes())
 router.use(guide.routes())
 
