@@ -24,7 +24,7 @@ passport.use(new GithubAuth(config.get('github'), async (
 router.get('/auth/github', passport.authenticate('github'))
 router.get(
   '/auth/github/callback',
-  passport.authenticate('github', { failureRedirect: '/login' }),
+  passport.authenticate('github'),
   ctx => {
     ctx.redirect('/')
   })

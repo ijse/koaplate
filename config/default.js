@@ -3,9 +3,8 @@ module.exports = {
   port: 4000,
 
   github: {
-    clientID: '03527e62f9a8bd201034',
-    clientSecret: '285dda7a6cb0f0cdc820ddc3d4ea8c56a4456472',
-    callbackURL: 'http://localhost:4000/auth/github/callback'
+    clientID: 'af9c267e62f4bda295b4',
+    clientSecret: 'f5a7c33f53f8cfb0a5852ff13e42e023f6bb1edc'
   },
 
   sqlite: 'sqlite://db.sqlite',
