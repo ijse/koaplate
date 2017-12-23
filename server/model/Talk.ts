@@ -10,5 +10,5 @@ import {
 })
 export default class Talk extends Model<Talk> {
   @Column(DataType.TEXT)
-  content: string
+  content?: string
 }
