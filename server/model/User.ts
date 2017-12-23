@@ -9,10 +9,10 @@ import {
   timestamps: true
 })
 export default class User extends Model<User> {
+  @Column({ primaryKey: true })
+  id?:number
   @Column
-  name?: string
-  @Column
-  login?: string
+  username?: string
   @Column
   password?: string
 }

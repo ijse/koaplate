@@ -8,6 +8,7 @@
   <li>
     [<%=moment(talk.createdAt).fromNow() %>]
     <%=talk.content %>
+    by <%=talk.user.username %>
   </li>
   <% }) %>
 </ul>
