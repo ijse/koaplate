@@ -38,10 +38,7 @@ module.exports = {
       options: {
         extractCSS: true,
         esModule: true,
-        preserveWhitespace: false,
-        postcss: {
-          plugins: [ require('postcss-nesting')() ]
-        }
+        preserveWhitespace: false
       }
     }, {
       test: /\.css$/,
@@ -60,7 +57,7 @@ module.exports = {
       'process.env.NODE_ENV': isProd ? '"production"' : '"development"'
     }),
 
-    new ExtractText('style.css'),
+    new ExtractText('app.css'),
     new UglifyJS({
       exclude: isProd ? null : /.*/,
       sourceMap: true,

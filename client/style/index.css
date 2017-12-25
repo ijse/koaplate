@@ -1,3 +1,6 @@
+@import './awsm.min.css';
+@import './button.css';
+
 :root {
   --primary: #864B38;
   --second: #71323E;

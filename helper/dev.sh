@@ -4,7 +4,10 @@ PATH=$PATH:node_modules/.bin
 
 NODE_ENV=development
 
-webpack -w | nodemon \
+postcss -w \
+  -o client/build/style.css client/style/index.css \
+| webpack -w \
+| nodemon \
   -e .ts,.js,.html \
   --watch "server/**/*" \
   --exec "ts-node" \

@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <h2> {{ name }} </h2>
-    <p> page build with vue </p>
+    <p> This page build with vue </p>
   </div>
 </template>
 <script lang="ts">
@@ -14,7 +14,6 @@
   }
 </script>
 <style scoped>
-  @import './style.css';
   .app {
     position: relative;
     overflow: hidden;
