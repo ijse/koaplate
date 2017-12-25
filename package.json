@@ -8,9 +8,9 @@
     "npm": ">=5.0.1"
   },
   "scripts": {
-    "start": "./helper/run.sh",
+    "start": "npm run build && ts-node bootstrap.ts",
     "dev": "helper/dev.sh",
-    "build": "webpack",
+    "build": "helper/build.sh",
     "postinstall": "ln -sf ../ node_modules/app || true"
   },
   "repository": {

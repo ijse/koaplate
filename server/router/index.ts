@@ -39,8 +39,8 @@ router.get('/', async ctx => {
   await ctx.render('index')
 })
 
-// prevent /src/* from request
-router.get('/src/*', async ctx => {
+// prevent files from request
+router.get('/_*', async ctx => {
   ctx.throw(404)
 })
 

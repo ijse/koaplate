@@ -7,10 +7,10 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   entry: {
-    app: './client/src/index.ts'
+    app: './client/index.ts'
   },
   output: {
-    path: path.join(__dirname, './client/build/'),
+    path: path.join(__dirname, './build/'),
     publicPath: '/',
     filename: '[name].js'
   },
