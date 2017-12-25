@@ -17,6 +17,10 @@ router.get('/talk', async (ctx:any) => {
 router.post('/talk', async (ctx:any) => {
   const msg = ctx.request.body.content
 
+  if (!ctx.state.user) {
+    ctx.throw(401)
+  }
+
   const newTalk = new Talk({
     content: msg,
     userId: ctx.state.user.id

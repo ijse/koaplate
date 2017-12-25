@@ -13,7 +13,16 @@ router.use(async (ctx, next) => {
     hostname: os.hostname(),
     env: config.get('env')
   })
-  await next()
+  try {
+    await next()
+  } catch (e) {
+    console.log(e.status)
+    ctx.status = e.status
+    await ctx.render('error', {
+      status: e.status,
+      message: e.message
+    })
+  }
 })
 
 // load routes in current folder
@@ -21,7 +30,6 @@ const routeList:any = requireDir('.')
 ;(<any>Object).entries(routeList)
   .forEach((mod:any) => {
     const [ name, route ] = mod
-    console.log('>>> add route %s', name)
     if (route.default instanceof Router) {
       router.use(route.default.routes())
     }
