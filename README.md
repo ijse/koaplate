@@ -14,6 +14,8 @@ koaplate
   - Static files
 - Config
 - Nodemon
+- SQLite3
+  - Sequlize ORM
 - Webpack
   - Vue2
   - PostCSS

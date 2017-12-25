@@ -2,9 +2,17 @@
 <html>
 <head>
   <title> koaplate </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/awsm.min.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-  <%- body %>
+  <header>
+    <% include partials/nav.html %>
+  </header>
+
+  <main>
+    <%- body %>
+  </main>
 
   <footer>
     hostname: <%= hostname %>

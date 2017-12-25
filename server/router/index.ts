@@ -16,15 +16,19 @@ router.use(async (ctx, next) => {
   await next()
 })
 
-
 // load routes in current folder
 const routeList:any = requireDir('.')
 ;(<any>Object).entries(routeList)
   .forEach((mod:any) => {
     const [ name, route ] = mod
+    console.log('>>> add route %s', name)
     if (route.default instanceof Router) {
       router.use(route.default.routes())
     }
   })
+
+router.get('/', async ctx => {
+  await ctx.render('index')
+})
 
 export default router

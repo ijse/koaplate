@@ -1,0 +1,25 @@
+<nav>
+  <ul>
+    <li>
+      <a href="/"> Koaplate </a>
+    </li>
+    <li> <a href="/guide"> Guide Page </a></li>
+    <li> <a href="/talk"> Talk Board </a></li>
+    <li>
+      <% if (typeof user !== 'undefined') { %>
+      Welcome,
+        <a href="/user/<%=user.username %>"><%=user.username %></a>
+    </li>
+    <li>
+      <a href="/logout"> Logout </a>
+    </li>
+    <% } else { %>
+    <li>
+      <a href="/login"> Login </a>
+    </li>
+    <li>
+      <a href="/signup"> Sign up </a>
+    </li>
+    <% } %>
+  </ul>
+</nav>

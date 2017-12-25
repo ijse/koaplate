@@ -1,13 +1,20 @@
-<h1> Talk Board </h1>
-<form action="/talk" method="post">
-  <input name="content" />
-  <input type="submit" value="send" />
-</form>
-<ul>
-  <% list.forEach(talk => { %>
-  <li>
-    [<%=moment(talk.createdAt).fromNow() %>]
-    <%=talk.content %>
-  </li>
-  <% }) %>
-</ul>
+<article>
+  <section>
+    <h2> Talk Board </h2>
+    <form action="/talk" method="post">
+      <input name="content" />
+      <input type="submit" value="send" />
+    </form>
+  </section>
+  <section>
+    <ul>
+      <% list.forEach(talk => { %>
+      <li>
+        [<%=moment(talk.createdAt).fromNow() %>]
+        <%=talk.content %>
+        by <%=talk.user.username %>
+      </li>
+      <% }) %>
+    </ul>
+  </section>
+</article>
