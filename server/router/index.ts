@@ -31,4 +31,9 @@ router.get('/', async ctx => {
   await ctx.render('index')
 })
 
+// prevent /src/* from request
+router.get('/src/*', async ctx => {
+  ctx.throw(404)
+})
+
 export default router
