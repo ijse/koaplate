@@ -1,6 +1,15 @@
 import * as passport from 'koa-passport'
+import * as crypto from 'crypto'
+import * as config from 'config'
 import { Op } from 'sequelize'
 import User from 'app/server/model/User'
+
+function hashPass (str:string = ''):string {
+  const secret:string = config.get('authSecret')
+  return crypto.createHmac('sha256', secret)
+    .update(str)
+    .digest('hex')
+}
 
 export default function (router:any) {
   router.get('/login', async (ctx:any) => {
@@ -27,6 +36,9 @@ export default function (router:any) {
   router.post('/user', async (ctx:any) => {
     const userInfo = ctx.request.body
     const user = new User(userInfo)
+
+    user.name = userInfo.name || user.username
+    user.password = hashPass(user.password)
     await user.save()
     await ctx.login(user)
     ctx.status = 200
