@@ -60,7 +60,6 @@
     "koa-session": "^5.5.1",
     "koa-static": "^4.0.2",
     "moment": "^2.20.1",
-    "nodemon": "^1.13.3",
     "passport-github": "^1.1.0",
     "passport-local": "^1.0.0",
     "postcss-cli": "^4.1.1",
@@ -83,6 +82,7 @@
     "webpack": "^3.10.0"
   },
   "devDependencies": {
+    "nodemon": "^1.13.3",
     "webpack-dev-server": "^2.9.7"
   }
 }
