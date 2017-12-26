@@ -2,6 +2,7 @@ import {
   Table,
   Column,
   DataType,
+  Unique,
   Default,
   Model
 } from 'sequelize-typescript'
@@ -17,6 +18,7 @@ export default class User extends Model<User> {
   @Column
   provider?: string
 
+  @Unique
   @Column
   username?: string
 
