@@ -16,8 +16,7 @@ router.use(async (ctx, next) => {
   try {
     await next()
   } catch (e) {
-    console.log(e.status)
-    ctx.status = e.status
+    ctx.status = e.status || 500
     await ctx.render('error', {
       status: e.status,
       message: e.message

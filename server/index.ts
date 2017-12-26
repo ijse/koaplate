@@ -29,7 +29,7 @@ app.use(bodyParser())
 
 render(app, {
   root: path.join(__dirname, 'view'),
-  layout: 'template',
+  layout: 'layout/page',
   viewExt: 'html',
   cache: !isDev,
   debug: false
