@@ -1,10 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractText = require('extract-text-webpack-plugin')
-const UglifyJS = require('webpack-parallel-uglify-plugin')
+
+const UglifyJS = webpack.optimize.UglifyJsPlugin
 
 const config = require('config')
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = config.get('env') !== 'dev'
 
 module.exports = {
   entry: {
@@ -31,6 +32,9 @@ module.exports = {
       exclude: /node_modules|vue\/src/,
       loader: 'ts-loader',
       options: {
+        compilerOptions: {
+          target: 'es5'
+        },
         appendTsSuffixTo: [/\.vue$/]
       }
     }, {
@@ -64,11 +68,15 @@ module.exports = {
       'process.env.NODE_ENV': isProd ? '"production"' : '"development"'
     }),
 
-    new ExtractText('app.css'),
     new UglifyJS({
       exclude: isProd ? null : /.*/,
-      sourceMap: true,
-      uglifyES: {}
-    })
+      parallel: true,
+      uglifyOptions: {
+        ecma: 8,
+      },
+      sourceMap: true
+    }),
+
+    new ExtractText('app.css')
   ]
 }

@@ -1,6 +1,6 @@
 module.exports = {
   env: 'prod',
-  port: process.env.PORT,
+  port: process.env.PORT || 4000,
   sqlite: 'sqlite:///tmp/db.sqlite',
   github: {
     clientID: '03527e62f9a8bd201034',
