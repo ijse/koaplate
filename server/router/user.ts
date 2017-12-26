@@ -13,8 +13,11 @@ function hashPass (str:string = ''):string {
 
 export default function (router:any) {
   router.get('/login', async (ctx:any) => {
-    await ctx.render('login')
+    await ctx.render('login', {
+      title: 'login'
+    })
   })
+
   router.post('/login',
     passport.authenticate('local'),
     async (ctx:any) => {

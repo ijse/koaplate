@@ -9,6 +9,7 @@ const router = new Router()
 
 router.use(async (ctx, next) => {
   Object.assign(ctx.state, {
+    title: 'koaplate',
     moment,
     hostname: os.hostname(),
     env: config.get('env')

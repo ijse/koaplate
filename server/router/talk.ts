@@ -10,6 +10,7 @@ router.get('/talk', async (ctx:any) => {
     include: [ User ]
   })
   await ctx.render('talk', {
+    title: 'talk - ' + ctx.state.title,
     list
   })
 })
