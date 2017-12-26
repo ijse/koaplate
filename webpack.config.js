@@ -12,9 +12,9 @@ module.exports = {
     app: './client/index.ts'
   },
   output: {
-    path: path.join(__dirname, './build/'),
+    path: path.join(__dirname, './build'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: 'js/[name].js'
   },
   resolve: {
     extensions: ['.js', '.ts', '.vue', '.json'],
@@ -77,6 +77,6 @@ module.exports = {
       sourceMap: true
     }),
 
-    new ExtractText('app.css')
+    new ExtractText('style/app.css')
   ]
 }

@@ -2,5 +2,8 @@ input[type=button],
 input[type=submit],
 input[type=reset],
 button {
+  padding: 3px 8px;
+  border: none;
+  cursor: pointer;
   background-color: var(--bg2);
 }

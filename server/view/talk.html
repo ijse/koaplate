@@ -1,20 +1,25 @@
+<link href="/style/talk-board.css" type="text/css" rel="stylesheet" />
 <article>
-  <section>
+  <section class="talk-board">
     <h2> Talk Board </h2>
     <form action="/talk" method="post">
-      <input name="content" required />
+      <textarea name="content" required></textarea>
       <input type="submit" value="send" />
     </form>
   </section>
   <section>
-    <ul>
-      <% list.forEach(talk => { %>
-      <li>
-        [<%=moment(talk.createdAt).fromNow() %>]
-        <%=talk.content %>
-        by <%=talk.user.username %>
-      </li>
-      <% }) %>
-    </ul>
+    <% list.forEach(talk => { %>
+    <article>
+      <section>
+        <p>
+          <%=talk.content %>
+        </p>
+      </section>
+      <footer>
+        [<time><%=moment(talk.createdAt).fromNow() %></time>]
+        <span>by <%=talk.user.username %></span>
+      </footer>
+    </article>
+    <% }) %>
   </section>
 </article>
