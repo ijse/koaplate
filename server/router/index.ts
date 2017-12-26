@@ -11,6 +11,7 @@ router.use(async (ctx, next) => {
   Object.assign(ctx.state, {
     title: 'koaplate',
     moment,
+    path: ctx.path,
     hostname: os.hostname(),
     env: config.get('env')
   })
