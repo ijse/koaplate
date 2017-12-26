@@ -15,6 +15,9 @@ router.use(async (ctx, next) => {
   })
   try {
     await next()
+    if (ctx.status >= 400) {
+      ctx.throw(ctx.status)
+    }
   } catch (e) {
     ctx.status = e.status || 500
     await ctx.render('error', {
