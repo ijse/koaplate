@@ -14,7 +14,9 @@ import './db'
 
 const app = new Koa()
 
-if (app.env === 'development') {
+const isDev = app.env === 'development'
+
+if (isDev) {
   app.use(morgan('dev'))
 }
 
@@ -29,7 +31,7 @@ render(app, {
   root: path.join(__dirname, 'view'),
   layout: 'template',
   viewExt: 'html',
-  cache: false,
+  cache: !isDev,
   debug: false
 })
 
