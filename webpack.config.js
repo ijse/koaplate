@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const ExtractText = require('extract-text-webpack-plugin')
 const UglifyJS = require('webpack-parallel-uglify-plugin')
 
+const config = require('config')
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
@@ -52,6 +53,12 @@ module.exports = {
     }]
   },
   devtool: 'sourcemap',
+  devServer: {
+    port: config.get('devPort'),
+    proxy: {
+      '/': `http://localhost:${config.get('port')}`
+    }
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': isProd ? '"production"' : '"development"'

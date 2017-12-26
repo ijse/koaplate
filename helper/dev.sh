@@ -6,7 +6,7 @@ NODE_ENV=development
 
 postcss -w \
   -o build/style.css client/style/index.css \
-| webpack -w \
+| webpack-dev-server \
 | nodemon \
   -e .ts,.js,.html \
   --watch "server/**/*" \

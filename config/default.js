@@ -1,6 +1,7 @@
 module.exports = {
   env: 'dev',
   port: 4000,
+  devPort: 4001,
 
   github: {
     clientID: 'af9c267e62f4bda295b4',
