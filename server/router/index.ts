@@ -35,6 +35,9 @@ const routeList:any = requireDir('.')
     if (route.default instanceof Router) {
       router.use(route.default.routes())
     }
+    if (typeof route.default === 'function') {
+      route.default(router)
+    }
   })
 
 router.get('/', async ctx => {
