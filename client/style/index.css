@@ -26,3 +26,10 @@ html, body {
 *>h6:first-child {
   margin-top: 0;
 }
+
+nav li.active a {
+  color: black;
+  font-weight: bold;
+}
+
+

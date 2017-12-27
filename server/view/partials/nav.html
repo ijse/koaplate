@@ -1,10 +1,21 @@
+<%
+  let menus = [
+    { name: 'Koaplate', url: '/' },
+    { name: 'Guide Page', url: '/guide' },
+    { name: 'Talk Board', url: '/talk' }
+  ].map(menu => {
+    menu.active = path === menu.url
+    return menu
+  })
+%>
 <nav>
   <ul>
-    <li>
-      <a href="/"> Koaplate </a>
+
+    <% menus.forEach(menu => { %>
+    <li class="<%=menu.active ? 'active' : ''%>">
+      <a href="<%=menu.url%>"><%=menu.name %></a>
     </li>
-    <li> <a href="/guide"> Guide Page </a></li>
-    <li> <a href="/talk"> Talk Board </a></li>
+    <% }) %>
     <li>
       <% if (typeof user !== 'undefined') { %>
       Welcome,
