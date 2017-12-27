@@ -2,7 +2,7 @@ koaplate
 ========
 
 ## Structure
-- Typescript
+- TypeScript
 - Koa2
   - Router
   - CORS
@@ -14,12 +14,18 @@ koaplate
   - Static files
 - Config
 - Nodemon
-- SQLite3
-  - Sequlize ORM
+- Sequlize ORM
+  - SQLite3
+  - MySQL
 - Webpack
+- PostCSS
+  - import
+  - autoprefixer
+  - nesting
+  - cssnano
+- Web
   - Vue2
-  - PostCSS
-    - CSS Nesting
+  - axios
 - Deploy by Shipit
 - Unit Test
 
