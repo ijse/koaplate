@@ -34,15 +34,13 @@ module.exports = {
       options: {
         compilerOptions: {
           target: 'es5'
-        },
-        appendTsSuffixTo: [/\.vue$/]
+        }
       }
     }, {
       test: /\.vue$/,
       loader: 'vue-loader',
       options: {
         extractCSS: true,
-        esModule: true,
         preserveWhitespace: false
       }
     }, {

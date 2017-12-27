@@ -1,16 +1,15 @@
 <template>
   <div class="app">
-    <h2> {{ name }} </h2>
-    <p> This page build with vue. </p>
+    <PRList></PRList>
   </div>
 </template>
-<script lang="ts">
-  let greeting:string = 'SPA Page'
+<script>
+  import PRList from './prlist'
   export default {
     name: 'App',
-    data: () => ({
-      name: greeting
-    })
+    components: {
+      PRList
+    }
   }
 </script>
 <style scoped>

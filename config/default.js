@@ -6,6 +6,7 @@ module.exports = {
   authSecret: 'koaplate',
 
   github: {
+    token: process.env.GH_TOKEN,
     clientID: 'af9c267e62f4bda295b4',
     clientSecret: 'f5a7c33f53f8cfb0a5852ff13e42e023f6bb1edc'
   },

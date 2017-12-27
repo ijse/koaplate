@@ -10,7 +10,7 @@ import * as render from 'koa-ejs'
 import * as statics from 'koa-static'
 import router from 'app/server/router'
 
-import './db'
+import 'app/server/service'
 
 const app = new Koa()
 
