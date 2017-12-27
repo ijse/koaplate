@@ -12,7 +12,7 @@ import User from './User'
   timestamps: true
 })
 export default class Talk extends Model<Talk> {
-  @Column({ primaryKey: true })
+  @Column({ primaryKey: true, autoIncrement: true })
   id?:number
 
   @Column(DataType.TEXT)

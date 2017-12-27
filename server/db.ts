@@ -1,7 +1,7 @@
 import * as config from 'config'
 import { Sequelize } from 'sequelize-typescript'
 
-const seq = new Sequelize(config.get('sqlite'))
+const seq = new Sequelize(config.get('db.url'))
 
 seq.addModels([__dirname + '/model'])
 
