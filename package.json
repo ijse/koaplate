@@ -13,6 +13,14 @@
     "build": "helper/build.sh",
     "postinstall": "ln -sf ../ node_modules/app || true"
   },
+  "apps": {
+    "name": "koaplate",
+    "script": "bootstrap.ts",
+    "env_production": {
+      "NODE_ENV": "production"
+    }
+  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ijse/koaplate.git"

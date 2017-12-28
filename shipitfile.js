@@ -21,7 +21,11 @@ module.exports = function (shipit) {
     }
   })
 
-  shipit.on('deploy:finish', function () {
-    shipit.remote('npm start')
+  shipit.on('deployed', function () {
+    return shipit.remote([
+      `cd ${shipit.config.deployTo}/current`,
+      'npm run build',
+      'pm2 startOrGracefulReload package.json'
+    ].join('&&'))
   })
 }
