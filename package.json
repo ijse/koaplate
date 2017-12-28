@@ -90,6 +90,9 @@
   },
   "devDependencies": {
     "nodemon": "^1.13.3",
+    "shipit-cli": "^3.0.0",
+    "shipit-deploy": "^2.5.1",
+    "shipit-yarn": "^0.2.0",
     "webpack-dev-server": "^2.9.7"
   }
 }
