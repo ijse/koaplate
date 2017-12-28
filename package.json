@@ -11,6 +11,7 @@
     "start": "npm run build && NODE_ENV=production ts-node bootstrap.ts",
     "dev": "helper/dev.sh",
     "build": "helper/build.sh",
+    "deploy": "shipit pi deploy",
     "postinstall": "ln -sf ../ node_modules/app || true"
   },
   "apps": {
@@ -20,7 +21,6 @@
       "NODE_ENV": "production"
     }
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ijse/koaplate.git"

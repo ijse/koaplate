@@ -6,7 +6,7 @@ module.exports = function (shipit) {
   shipit.initConfig({
     default: {
       workspace: '/tmp/koaplate',
-      deployTo: '/var/local/app/koaplate-dist',
+      deployTo: '/var/local/koaplate',
       repositoryUrl: 'git://github.com/ijse/koaplate.git',
       ignores: ['.git', 'node_modules' ],
       keepReleases: 2,
