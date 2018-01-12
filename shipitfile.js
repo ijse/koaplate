@@ -25,7 +25,8 @@ module.exports = function (shipit) {
     return shipit.remote([
       `cd ${shipit.config.deployTo}/current`,
       'npm run build',
-      'pm2 startOrGracefulReload package.json'
+      'pm2 kill',
+      'NODE_CONFIG_ENV=pi pm2 start package.json'
     ].join('&&'))
   })
 }
