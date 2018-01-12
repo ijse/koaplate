@@ -1,6 +1,6 @@
 module.exports = Object.assign(require('./production.js'), {
   db: {
-    url: 'sqlite://~/koaplabe-db.sqlite'
+    url: 'sqlite:///tmp/koaplabe-db.sqlite'
   },
   github: {
     token: process.env.GH_TOKEN,
