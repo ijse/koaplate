@@ -1,4 +1,7 @@
 module.exports = Object.assign(require('./production.js'), {
+  db: {
+    url: 'sqlite:///tmp/koaplabe-db.sqlite'
+  },
   github: {
     token: process.env.GH_TOKEN,
     clientID: 'b6f123a4728d35b25376',
